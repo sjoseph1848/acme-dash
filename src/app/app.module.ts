@@ -15,6 +15,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { HeaderComponent } from './core/components/navigation/header/header.component';
+import { SidenavListComponent } from './core/components/navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     WelcomeComponent,
     SignupComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
