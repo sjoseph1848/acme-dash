@@ -3,13 +3,24 @@
 <app-forms></app-forms> -->
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
-      <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+      <p>I am the sidenav</p>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
-      <main>
-            <app-forms></app-forms>
-        <router-outlet></router-outlet>
-      </main>
+        <mat-toolbar color="primary">
+          <div>
+            <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <div>LOGO</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end">
+              <a routerLink="/signup">Signup</a>
+              <a routerLink="/login">Login</a>
+              <a routerLink="/dashboard">Dashboard</a>
+            </div>
+        </mat-toolbar>
+          <main>
+      <router-outlet></router-outlet>
+          </main>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>
