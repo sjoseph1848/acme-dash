@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-title>
-    <!-- <span>Edit Project</span> -->
-    <span>New Project</span>
+    <span *ngIf="project.id">Edit Project</span>
+    <span *ngIf="!project.id">New Project</span>
   </mat-card-title>
   <mat-card-content>
     <form>
@@ -16,17 +16,18 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="(null)" mat-button>
+    <button *ngIf="project.id" (click)="api.putProject(project)" mat-button>
       EDIT
     </button>
-    <button (click)="(null)" mat-button>
+    <button *ngIf="project.id" (click)="project = {}" mat-button>
       NEW
     </button>
-    <button (click)="(null)" mat-button>
+    <!-- <button (click)="(null)" mat-button>
       EDIT QUESTIONS
-    </button>
-    <button (click)="(null)" mat-button>
+    </button> -->
+    <button *ngIf="!project.id" (click)="api.postProject(project)" mat-button>
       POST
     </button>
   </mat-card-actions>
 </mat-card>
+<project-list></project-list>

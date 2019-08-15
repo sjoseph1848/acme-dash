@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,7 +26,10 @@ import { SidenavListComponent } from './core/components/navigation/sidenav-list/
 import { MatCardModule } from '@angular/material/card';
 import { ProjectComponent } from './dashboard/project/project.component';
 import { FormsModule } from '@angular/forms';
-
+import { ApiService } from './api.service';
+import { ProjectListComponent } from './dashboard/project/project-list/project-list.component';
+import { QuestionComponent } from './dashboard/question/question.component';
+import { QuestionListComponent } from './dashboard/question-list/question-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,10 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     HeaderComponent,
     SidenavListComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProjectListComponent,
+    QuestionComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +60,10 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MatCardModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
