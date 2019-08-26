@@ -1,0 +1,36 @@
+<section class="info" fxLayoutGap="20px" fxLayoutAlign="center" >
+    <div fxLayout="row" fxLayout.xs="column" fxFlex.gt-sm="100%">
+        <mat-tab-group fxLayoutGap="20px" fxFlex.gt-sm="100%" >
+            <mat-tab label="GDP to Debt: 2000 - 2008">
+              <ng-template matTabContent>
+                <div>
+                    <div class="bar" style="display: block" fxFlex.gt-sm="100%">
+                      <canvas baseChart
+                              [datasets]="barChartData"
+                              [labels]="barChartLabels"
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType">
+                      </canvas>
+                    </div>
+                  </div>
+              </ng-template>
+            </mat-tab>
+            <mat-tab label="GDP to Debt: 2008 - 2015">
+              <ng-template matTabContent>
+                <div>
+                    <div class="bar" style="display: block">
+                      <canvas baseChart
+                              [datasets]="barChartData"
+                              [labels]="barChartLabels"
+                              [options]="barChartOptions"
+                              [legend]="barChartLegend"
+                              [chartType]="barChartType">
+                      </canvas>
+                    </div>
+                  </div>
+              </ng-template>
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+</section>

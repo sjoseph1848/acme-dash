@@ -30,6 +30,10 @@ import { ApiService } from './api.service';
 import { ProjectListComponent } from './dashboard/project/project-list/project-list.component';
 import { QuestionComponent } from './dashboard/question/question.component';
 import { QuestionListComponent } from './dashboard/question-list/question-list.component';
+import { ChartsComponent } from './dashboard/charts/charts.component';
+import { ChartsModule } from 'ng2-charts';
+import {MatTabsModule} from '@angular/material/tabs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,8 @@ import { QuestionListComponent } from './dashboard/question-list/question-list.c
     ProjectComponent,
     ProjectListComponent,
     QuestionComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,9 @@ import { QuestionListComponent } from './dashboard/question-list/question-list.c
     MatCardModule,
     FormsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule,
+    MatTabsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
